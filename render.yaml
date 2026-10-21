@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: render-engine
+    name: wu9521-box
     env: docker
     plan: free
     region: singapore
