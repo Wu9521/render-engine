@@ -3,7 +3,7 @@ services:
     name: render-engine
     env: docker
     plan: free
-    region: oregon # or singapore / frankfurt
+    region: singapore
     dockerfilePath: Dockerfile
     healthCheckPath: /health
     autoDeploy: true
@@ -14,27 +14,25 @@ services:
         generateValue: true
       - key: TTYD_USER
         value: admin
-      - key: TTYD_PASS
-        generateValue: true
       - key: SSH_PUBKEY
-        value: "" # Optional: Paste your ~/.ssh/id_ed25519.pub content here
+        value: ""
       - key: ENABLE_EASYTIER
-        value: "" # Optional: Set to true or define ET_NAME to enable EasyTier
+        value: ""
       - key: ET_NAME
-        value: "" # Optional: e.g. "my-mesh"
+        value: ""
       - key: ET_SECRET
-        generateValue: true # Set manually if joining an existing mesh; leave generateValue for new isolated mesh
+        generateValue: true
       - key: ET_PEERS
-        value: "" # Optional: e.g. "tcp://your-vps.com:11010"
+        value: ""
       - key: ENABLE_SINGBOX
-        value: "" # Optional: Set to true or define SINGBOX_UUID to enable sing-box
+        value: ""
       - key: SINGBOX_UUID
-        value: "" # Optional: UUID for sing-box VLESS inbound
+        value: ""
       - key: KOMARI_TOKEN
-        value: "" # Optional: Node token for MangoHub telemetry
+        value: ""
       - key: KOMARI_ENDPOINT
-        value: "" # Optional: e.g. "https://your-dashboard.com"
+        value: ""
       - key: ENABLE_KEEPALIVE
-        value: "true" # Keepalive daemon prevents Render 15-min inactivity hibernation
+        value: "true"
       - key: KEEPALIVE_INTERVAL
-        value: "300" # Inbound ping interval in seconds (default 300s = 5m)
+        value: "300"
